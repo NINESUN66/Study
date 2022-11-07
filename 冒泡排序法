@@ -20,9 +20,6 @@ void f(int a[], int n=0)
 int main()
 
 {
-    // From IMUDGESOJ -RID:367936 -PID:1887 -RES:4 -LANG:1
-
-
 	int i, n, * p;
 
 	cin >> n;
