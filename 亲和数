@@ -2,8 +2,6 @@
 using namespace std;
 int main()
 {
-    // From IMUDGESOJ -RID:378949 -PID:1153 -RES:4 -LANG:1
-
 	int n;
 	cin >> n;
 	int arr[2];
