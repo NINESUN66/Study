@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n;
+	cin >> n;
+	double b = 100;
+	double sum = 0;
+	double temp = 0;
+	for (int a = 1; a < n; a++)
+	{	
+		sum = temp + b;
+		temp = sum;
+		b /= 2;
+	}
+	sum += 100;
+	printf("%.4f", sum);
+}
