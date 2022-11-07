@@ -1,0 +1,35 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int ss(int n)
+{
+	int t = 1;
+	for (int i = 2; i < sqrt(n) + 1; i++)
+	{
+		if (n % i == 0)
+		{
+			t = 0;
+			break;
+		}
+	}
+	return t;
+}
+int main()
+{
+	int a = 0;
+	for (int i = 100; i <= 200; i++)
+	{
+		if (ss(i) == 1)
+		{
+			a++;
+		}
+	}
+	cout << a << endl;
+	for (int i = 100; i <= 200; i++)
+	{
+		if (ss(i) == 1)
+		{
+			cout << i << " ";
+		}
+	}
+}
