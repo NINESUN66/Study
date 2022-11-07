@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	long long int n;
+	long long int arr[100];
+	long long int i, j = 0;
+	long long int k = 0;
+	while (cin >> n)
+	{
+		if (n == 0)
+		{
+			cout << "0-->0"<<endl;
+		}
+		else
+		{
+			if (n > 0)
+			{
+				k = n;
+			}
+			else 
+			{
+				k = -n;
+			}
+			for (i = 0; k > 0; i++)
+			{
+				arr[i] = k % 2;
+				k = k / 2;
+				j++;
+			}
+			cout <<n << "-->";
+			if (n < 0)
+			{
+				cout << "-";
+			}
+			for (j = j - 1; j >= 0; j--)
+			{
+				
+				cout << arr[j];
+			}
+			j = 0;
+			cout << endl;
+		}
+	}
+}
