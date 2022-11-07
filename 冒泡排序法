@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+void f(int a[], int n=0)
+
+{	
+	for (int i = 0; i < n-1; i++)
+	{
+		for (int j = 0; j < n-1-i; j++)
+		{
+			if (a[j] < a[j + 1])
+		
+			{
+				int temp = a[j + 1];
+				a[j + 1] = a[j];
+				a[j] = temp;
+			}
+ 		}
+	}
+}
+int main()
+
+{
+    // From IMUDGESOJ -RID:367936 -PID:1887 -RES:4 -LANG:1
+
+
+	int i, n, * p;
+
+	cin >> n;
+
+	p = new int[n];
+
+	for (i = 0; i < n; i++) cin >> *(p + i);
+
+	f(p, n);
+
+	for (i = 0; i < n; i++) cout << p[i] << " ";
+
+}
