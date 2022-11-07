@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int arr[6], brr[8];
+	for (int i = 0; i < 6; i++)
+	{
+		cin >> arr[i];
+	}
+	for (int j = 0; j < 8; j++)
+	{
+		cin >> brr[j];
+	}
+	for (int i = 0; i < 6; i++)
+	{
+		for (int b = 0; b < 8; b++)
+		{
+			if (arr[i] == brr[b])
+			{
+				cout << brr[b] << endl;
+			}
+		}
+	}
+}
