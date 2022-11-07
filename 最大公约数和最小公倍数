@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int m, n, i, j, a;
+	cin >> m >> n;
+	j = m * n;
+	if (m < n)
+	{
+		a = m;
+		m = n;
+		n = a;
+	}
+	do
+	{
+		i = m % n;
+		m = n;
+		n = i;
+	} while (i != 0);
+	i = m;
+	j /= i;
+	cout << i << "\n" << j << endl;
+	return 0;
+}
