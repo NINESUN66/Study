@@ -1,0 +1,32 @@
+#include<iostream>
+#include<math.h>
+#include<algorithm>
+#include<cstring>
+using namespace std;
+int main()
+{
+	string s;
+	cin>> s;
+	int a = s.size();
+	int t = 0;
+	int i = 0;
+		for (int j = a-1 ; j >= 0; j--)
+		{
+
+			if (s[i] != s[j])
+			{
+				t = 1;
+				break;
+			}
+			i++;
+		}
+	
+	if (t == 0)
+	{
+		cout << "Y";
+	}
+	else
+	{
+		cout << "N";
+	}
+}
