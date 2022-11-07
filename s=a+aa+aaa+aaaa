@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a,  t, s;
+	s = 0;
+	cin >> a ;
+	t = a;
+	for (int j = 0; j < 4; j++)
+	{
+		s = s + t;
+		a = a * 10;
+		t = t + a;
+	}
+	cout << s;
+
+}
