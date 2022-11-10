@@ -1,0 +1,12 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int main()
+{
+	int arr[20][20];
+	srand((unsigned)time(NULL));//删去为伪随机数
+	int t = rand() % 101;
+	cout << t;
+	
+}
