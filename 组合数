@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    double m, n;
+    while (cin >> m >> n)
+    {
+        double end = 0;
+        double a = 1, b = 1;
+        double t = 1, temp = 1;
+        int e = m;
+        for (int i = 0; i <n; i++)
+        {
+
+            a = e * t;
+            t = a;
+            e--;
+        }
+        for (int j = n; j >= 1; j--)
+        {
+            b = j * temp;
+            temp = b;
+        }
+        end = a / b;
+        cout << end << endl;
+    }
+}
