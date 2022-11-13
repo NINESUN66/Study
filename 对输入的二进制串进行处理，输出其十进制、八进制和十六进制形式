@@ -1,0 +1,34 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+    char s;
+    int n;
+    int c=0;
+    int m=0;
+    while(cin>>s) {
+        if (s == '#') {
+            break;
+        } else n = s - 48;
+        c++;
+        m += n * 10;
+        m *= 10;
+    }
+    m/=100;
+    int a=m;
+    int num = 0;
+    int b;
+    for (int i = 0; a != 0; ++i)
+    {
+        b = a % 10;
+        num = b * (pow(2, i)) + num;
+        a = a / 10;
+    }
+    cout << num<<endl;
+    printf("%o\n",num);//八进制
+    printf("%x\n",num);//十六进制
+    //十进制用%d
+
+
+}
