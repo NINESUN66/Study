@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    // From IMUDGESOJ -RID:399625 -PID:1740 -RES:4 -LANG:1
+
+	int n;
+	cin >> n;
+	for (int i = 1; i <= n; i++)
+	{
+		int j = 0;
+		for (j = 1; j <= 2 * i - 1; j++)
+		{
+			cout << i ;
+			if ( j!= 2*i-1)
+			{
+				cout << " ";
+			}
+		}
+		cout << endl;
+	}
+	for (int i = n - 1; i >= 1; i--)
+	{
+		int o = 0;
+		for (o = 2 * i - 1; o>= 1; o--)
+		{
+			cout << i ;
+			if (o != 1)
+			{
+				cout << " ";
+			}
+		}
+		if(o!=1) cout << endl;
+	}
+}
