@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int q = 0, b = 0, c = 0;
+	char a;
+	while (cin.get(a))
+	{
+		if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122) || (a >= 48 && a <= 57)||(a>='0'&&a<='9'))
+		{
+			q++;
+			b = q;
+		}
+		if (a == 32)
+		{
+			c = q;
+			q = 0;
+		}
+	}
+	if (c == q)cout << q;
+	else cout << b;
+}
