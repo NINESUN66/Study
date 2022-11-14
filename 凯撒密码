@@ -1,0 +1,53 @@
+#include<iostream>
+#include<string>
+#include<cstring>
+using namespace std;
+int main()
+{
+    // From IMUDGESOJ -RID:399660 -PID:1211 -RES:4 -LANG:1
+
+	string s;
+	while (getline(cin, s))
+	{
+		if (s == "START"){}
+		else if(s=="END"){}
+		else if (s == "ENDOFINPUT") { break; }
+		else
+		{
+			int n = s.size();
+			for (int i = 0; i < n; i++)
+			{
+				if (s[i] == 'A')
+				{
+					s[i] = 'V';
+				}
+				else if (s[i] == 'B')
+				{
+					s[i] = 'W';
+				}
+				else if (s[i] == 'C')
+				{
+					s[i] = 'X';
+				}
+				else if (s[i] == 'D')
+				{
+					s[i] = 'Y';
+				}
+				else if (s[i] ==  'E')
+				{
+					s[i] ='Z';
+				}
+				else if(s[i]>='A'&&s[i]<='Z') 
+				{
+					s[i] -= 5;
+				}
+			}
+			for (int i = 0; i < n; i++)
+			{
+				cout << s[i];
+			}
+			cout << endl;
+		}
+			
+	}
+}
