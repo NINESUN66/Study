@@ -1,0 +1,28 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    // From IMUDGESOJ -RID:399621 -PID:1237 -RES:4 -LANG:1
+
+	double a[7] = { 0 };
+	double m, n, sum = 0;
+	string b;
+	while (cin >> a[0])
+	{
+		m = a[0];
+		n = a[0];
+		for (int i = 1; i <= 6; i++)
+		{
+			cin >> a[i];
+			if (a[i] > m) m = a[i];
+			if (a[i] < n) n = a[i];
+			sum = sum + a[i];
+		}
+		cin >> b;
+		sum = (sum - m - n + a[0]) / 5;
+		cout << b << " ";
+		printf("%.2f\n",sum);
+		sum = 0;
+	}
+}
