@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    // From IMUDGESOJ -RID:399567 -PID:1110 -RES:4 -LANG:1
+
+    int N;
+    cin>>N;
+    int a,b;
+    for(int i=1;i<=N;i++)
+    {
+        cin>>a>>b;
+        int c=1;
+        for(int j=1;j<=(a-1)*b+1;j++) {
+            for (int k = 1; k <= a; k++) {
+                if (k == c || k == a + 1 - c) {
+                    cout << "X";
+                } else {
+                    cout << " ";
+                }
+            }
+            c++;
+            if (c ==a + 1)
+            {
+                c=2;
+            }
+            cout<<endl;
+        }
+        cout<<endl;
+    }
+}
