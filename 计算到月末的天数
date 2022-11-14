@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int rn(int year)
+{
+	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+	{
+		return 1;
+	}
+	else return 0;
+}
+
+int main()
+{
+    // From IMUDGESOJ -RID:399635 -PID:1879 -RES:4 -LANG:1
+
+int y, m, d;
+	cin >> y >> m >> d;
+	int day = 0;
+	if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12)
+	{
+		day = 31 - d;
+	}
+	else if (m != 2)
+	{
+		day = 30 - d;
+	}
+	if (rn(y) == 1)
+	{
+		if (m == 2)
+		{
+			day = 29 - d;
+		}
+	}
+	else
+	{
+		if (m == 2)
+		{
+			day = 28 - d;
+		}
+	}
+	cout << day;
+}
