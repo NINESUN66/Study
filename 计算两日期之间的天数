@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+int rn(int year)
+{
+	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+	{
+		return 1;
+	}
+	else return 0;
+}
+int main()
+{
+	int y1, m1, d1;
+	cin >> y1 >> m1 >> d1;
+	int y2, m2, d2;
+	cin >> y2 >> m2 >> d2;
+	int r[13] = { 0,31,29,31,30,31,30,31,31,30,31,30,31 };
+	int n[13] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };
+	int day = 0;
+	//计算两年之间有多少天（除了最后一年）
+	for (int i = y1; i < y2; i++)
+	{
+		if (rn(i) == 1)
+			day += 366;
+		else
+			day += 365;
+	}
+	//计算最后一年的天数
+	for (int i = 1; i < m2; i++)
+	{
+		if (rn(y2) == 1)
+			day += r[i];
+		else
+			day += n[i];
+	}
+	day += d2;
+	//减去第一年已经过去的天数
+	for (int i = 1; i < m1; i++)
+	{
+		if (rn(y1) == 1)
+			day -= r[i];
+		else
+			day -= n[i];
+	}
+	day -= d1;
+	//两端都记加一天
+	day += 1;
+	cout << day;
+}
