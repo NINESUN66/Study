@@ -1,0 +1,38 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int arr[12];
+	int a[3][4];
+	for (int i = 0; i < 12; i++)
+	{
+		cin >> arr[i];
+	}
+	sort(arr, arr + 12);
+	int n = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			a[i][j] = arr[n];
+			n++;
+		}
+	}
+	int m = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			m++;
+			cout << a[i][j];
+			if (m == 4) 
+			{
+				cout << "\n"; 
+				m = 0;
+			}
+			else cout << " ";
+		}
+	}
+
+}
