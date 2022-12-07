@@ -1,0 +1,41 @@
+#include <iostream> 
+#include <string> 
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int arr[100][100];
+	int a, b;
+	cin >> a >> b;
+	for (int i = 0; i < a; i++)
+	{
+		for (int j = 0; j < b; j++)
+		{
+			cin >> arr[i][j];
+		}
+	}
+	int brr[10086];
+	int t = 0;
+	int c[5];
+	for (int i = 0; i < a; i++)
+	{
+		for (int j = 0; j < b; j++)
+		{
+			brr[j] = arr[i][j];
+		}
+		sort(brr, brr + b);
+		for (int j = 0; j < b; j++)
+		{
+			if (arr[i][j] == brr[b - 1])
+			{	
+				int temp = brr[b-1];
+				for (int k = 0; k < a; k++)
+				{
+					if (arr[k][j] < temp) { t = 1; break; }
+					else { c[0] = j; c[1] = i; c[2] = temp; }
+				}
+			}
+		}
+		if (t == 0)cout << c[1] << " " << c[0] << " " << c[2] << endl;
+	}
+}
