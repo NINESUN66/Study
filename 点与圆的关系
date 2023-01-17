@@ -1,0 +1,77 @@
+#include<iostream> 
+#include<cmath>
+#include "Circle.h"
+#include "Point.h"
+using namespace std;
+//class Point
+//{
+//private:
+//	int m_X;
+//	int m_Y;
+//public:
+//	void setX(int X)
+//	{
+//		m_X = X;
+//	}
+//	int	getX()
+//	{
+//		return m_X;
+//	}
+//	void setY(int Y)
+//	{
+//		m_Y = Y;
+//	}
+//	int	getY()
+//	{
+//		return m_Y;
+//	}
+//};
+//class Circle
+//{
+//private:
+//	int m_R;//半径
+//	Point m_Center;//圆心
+//public:
+//	void setR(int r)
+//	{
+//		m_R = r;
+//	}
+//	int getR()
+//	{
+//		return m_R;
+//	}
+//	void setCenter(Point Center)
+//	{
+//		m_Center = Center;
+//	}
+//	Point getCenter()
+//	{
+//		return m_Center;
+//	}
+//};
+//判断点和⚪的关系
+void isinCircle(Circle& c, Point& p)
+{
+	int distance = pow((c.getCenter().getX() - p.getX()), 2) + pow((c.getCenter().getY() - p.getY()), 2);
+	int rDistance = pow(c.getR(), 2);
+	if (distance == rDistance) { cout << "点在圆上" << endl; }
+	else if (distance > rDistance) { cout << "点在圆外" << endl; }
+	else { cout << "点在圆内" << endl; }
+}
+int main()
+{
+	//int X1, Y1, X2, Y2,R;
+	//cin >> X1 >> Y1 >> X2 >> Y2 >> R;
+	Circle c;
+	Point center;
+	c.setR(10);
+	center.setX(10);
+	center.setY(0);
+	c.setCenter(center);
+	Point P;
+	P.setX(10);
+	P.setY(0);
+	isinCircle(c, P);
+	system("pause");
+	return 0;
+}
