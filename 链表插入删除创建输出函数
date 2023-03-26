@@ -1,0 +1,101 @@
+#include <iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    node* next;
+};
+
+node* initList()
+{
+    node* head = new node;
+    head->next = NULL;
+    node* p = head;
+    for(int i = 0; i < 3; i++)
+    {
+        node* temp = new node;
+        cin>>temp->data;
+        p->next = temp;
+        p = temp;
+    }
+    p->next = NULL;
+    return head;
+}
+
+void ShowList(node* head)
+{
+    node* p = head->next;
+    while (p!=nullptr)
+    {
+        cout << p->data << " ";
+        p = p->next;
+    }
+    cout << endl;
+}
+
+void Insert(node* head, int pos)
+{
+    node* p = head;
+    for (int i = 0; i < pos; i++)
+    {
+        p = p->next;
+    }
+    node* temp = new node;
+    temp->data = 0;
+    temp->next = p->next;
+    p->next = temp;
+}
+
+void AddOne(node* head, int pos)
+{
+    node* p = head;
+    for (int i = 0; i < pos; i++)
+    {
+        p = p->next;
+    }
+    p->data += 1;
+}
+
+void Delete(node* head, int pos)
+{
+    node* p = head;
+    for (int i = 0; i < pos - 1; i++)
+    {
+        p = p->next;
+    }
+    node* temp = p->next;
+    p->next = temp->next;
+    delete temp;
+}
+
+int main()
+{
+    node* head = initList();
+    
+    ShowList(head);
+    int n, m;
+    while (1)
+    {
+        cin >> n;
+        if (n == 0) break;
+        cin >> m;
+        switch (n)
+        {
+        case 1:
+            Insert(head, m);
+            break;
+        case 2:
+            AddOne(head,m);
+            break;
+        case 3:
+            Delete(head, m);
+            break;
+        default:
+            break;
+        }
+        ShowList(head);
+    }
+
+    return 0;
+}
