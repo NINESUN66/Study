@@ -1,0 +1,64 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+//利用函数模板封装一个选择排序函数，可以对不同数据类型数组进行排序
+
+//交换函数模板
+template<typename T>
+void mySwap(T&a, T&b)
+{
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+//排序函数模板
+template<typename T>
+void mySort(T arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        int max = i;
+        for(int j=i+1;j<n;j++)
+        {
+            if(arr[max]<arr[j])
+            {
+                max = j;
+            }
+        }
+        if(i!=max)mySwap(arr[max],arr[i]); 
+    }
+}
+
+//交换函数模板
+template<typename T>
+void Show(T arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i];
+    }
+    cout<<endl;
+}
+
+void Test01()
+{
+    char s[] = "shabi";
+    mySort(s,sizeof(s)/sizeof(char));
+    Show(s,sizeof(s)/sizeof(char));
+}
+
+void Test02()
+{
+    int a[] = {7,5,6,1,4,3};
+    mySort(a,sizeof(a)/sizeof(int));
+    Show(a,sizeof(a)/sizeof(int));
+}
+
+int main()
+{
+    Test01();
+    Test02();
+    system("pause");
+} 
